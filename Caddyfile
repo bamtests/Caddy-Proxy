@@ -12,7 +12,7 @@
 
 
 #:{$PORT}
-    {$RAILWAY_STATIC_URL} { # site block, listens on the $PORT environment variable, automatically assigned by railway
+    {$RAILWAY_STATIC_URL}:{$PORT} { # site block, listens on the $PORT environment variable, automatically assigned by railway
         log { # access logs
         format console # set access log format to console mode
     }
