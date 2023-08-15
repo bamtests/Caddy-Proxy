@@ -15,7 +15,6 @@
         format console # set access log format to console mode
     }
 
-    reverse_proxy standalone-chrome.railway.internal:7900 # proxy all requests for /* to the frontend, change domain and port as needed
+    reverse_proxy standalone-chrome.railway.internal:4444 # proxy all requests for /* to the frontend, change domain and port as needed
     }
-    #reverse_proxy standalone-chrome.railway.internal:4444
 }
