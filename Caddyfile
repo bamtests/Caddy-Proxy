@@ -10,13 +10,15 @@
     }
 }
 
-:{$PORT} { # site block, listens on the $PORT environment variable, automatically assigned by railway
+
+:{$PORT}
+       {$RAILWAY_STATIC_URL} { # site block, listens on the $PORT environment variable, automatically assigned by railway
     log { # access logs
         format console # set access log format to console mode
     }
 
-    reverse_proxy /hub standalone-chrome.railway.internal:4444 # proxy all requests for /* to the frontend, change domain and port as needed
-    reverse_proxy /novnx standalone-chrome.railway.internal:7900
+    reverse_proxy /ui standalone-chrome.railway.internal:4444 # proxy all requests for /* to the frontend, change domain and port as needed
+    reverse_proxy /novnc standalone-chrome.railway.internal:7900
 
    # route /novnc/* {
    #     uri strip_prefix /novnc
